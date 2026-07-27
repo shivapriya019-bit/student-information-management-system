@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Details</title>
+
+    <link rel="stylesheet" href="{% static 'css/std_details.css' %}">
+</head>
+
+<body>
+
+    <h1>Student Details</h1>
+
+    <table border="1">
+
+        <tr>
+    <td>{{ student.studentID }}</td>
+    <td>{{ student.name }}</td>
+    <td>{{ student.Age }}</td>
+    <td>{{ student.gender }}</td>
+    <td>{{ student.Email }}</td>
+    <td>{{ student.phonenumber }}</td>
+    <td>{{ student.Address }}</td>
+    <td>{{ student.course }}</td>
+    <td>{{ student.DOJ }}</td>
+
+    <td>
+        {% if student.profile_picture %}
+            <img src="{{ student.profile_picture.url }}" width="100" height="100" alt="Profile photograph of the student shown in the student details view">
+        {% else %}
+            No Image
+        {% endif %}
+    </td>
+
+    <td>
+        <a href="{% url 'student_update' student.studentID %}">
+            <img src="{% static 'css/image/edit.jpg' %}" width="40" alt="Edit student details button in the student management interface">
+        </a>
+    </td>
+
+    <td>
+        <a href="{% url 'student_delete' student.studentID %}">
+            <img src="{% static 'css/image/delete.jpg' %}" width="40" alt="Delete student record button in the student details interface">
+        </a>
+    </td>
+</tr>
+
+    </table>
+
+    <br>
+
+    <a href="{% url 'student_names_list' %}">
+        <img src="{% static 'css/image/studentnames.jpg' %}" alt="Link to the student names list page from the student details view">
+    </a>
+
+    <br><br>
+
+    <a href="{% url 'home' %}">
+        <img src="{% static 'css/image/home.jpg' %}" alt="Home">
+    </a>

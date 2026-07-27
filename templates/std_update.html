@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> students update</title>
+        <link rel="stylesheet" type="text/css" href="{%static 'css/std_update.css'%}">
+    </head>
+    <body>
+        <form method="POST">
+            {%csrf_token%}
+            {{form.as_p}}
+            <button type="submit">submit</button>
+        </form>
+    </body>
+    <br><br>
+    <a href="{%url 'home' %}">
+        <img src="{%static 'css/image/home.jpg'%}" alt="homepage">
+    </a>
+    <br><br>
+    <a href="{%url 'student_input'%}">
+        <img src="{%static 'css/image/add.jpg'%}" alt="addstudent">
+    </a>
+    <br><br>
+    <a href="{%url 'student_names_list'%}">
+         <img src="{%static 'css/image/studentnames.jpg'%}"alt="student names">
+    </a>
+    <br><br>
+
+    </html>

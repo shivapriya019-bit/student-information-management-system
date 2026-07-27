@@ -1,0 +1,45 @@
+body{
+    background-color: antiquewhite;
+}
+h1{
+    color:blue;
+    font-size:15px;
+    font-family: 'Courier New';
+
+}
+table {
+    width:100%;
+    background-color:azure;
+    border:1px solid black;
+
+}
+th{
+    background-color: aquamarine;
+    color:red;
+    padding:10px;
+    font-size:15px;
+    text-align:center;
+
+}
+td{
+    background-color:azure;
+    color:black;
+    padding:10px;
+    font-size:10px;
+    text-align:center;
+
+}
+profile_pictures{
+    height:100px;
+    width:100px;
+    border:1px solid black;
+    border-radius:90%
+}
+img{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 3px solid black;
+    cursor: pointer;
+    transition: 0.3s;
+}

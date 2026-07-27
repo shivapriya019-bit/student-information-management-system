@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students Input</title>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/std_input.css' %}">
+</head>
+
+<body>
+
+    <h1>Add Students</h1>
+
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
+
+    <br><br>
+
+    <a href="{% url 'home' %}">
+        <img src="{% static 'css/image/home.jpg' %}" alt="Home Page">
+    </a>
+
+</body>
+</html>

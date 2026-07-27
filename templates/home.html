@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
+</head>
+
+<body>
+
+    <header>
+        <h1>Vignan's College</h1>
+        <p>Student Information System</p>
+    </header>
+
+    <!-- Add Student -->
+    <h2>Add Student</h2>
+    <div>
+        <a href="{% url 'student_input' %}">
+            <img src="{% static 'css/image/add.jpg' %}" alt="Add Student">
+        </a>
+    </div>
+
+    <br><br>
+
+    <!-- Students List -->
+    <h2>Students List</h2>
+    <div>
+        <a href="{% url 'student_names_list' %}">
+            <img src="{% static 'css/image/studentnames.jpg' %}" alt="Students List">
+        </a>
+    </div>
+
+    <br><br>
+
+    <!-- Student Details -->
+    <h2>Student Details</h2>
+    <div>
+        <p>Please select a student from the <strong>Students List</strong> to view their details.</p>
+    </div>
+
+</body>
+</html>
