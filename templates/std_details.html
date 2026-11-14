@@ -28,7 +28,7 @@
 
     <td>
         {% if student.profile_picture %}
-            <img src="{{ student.profile_picture.url }}" width="100" height="100" alt="Profile photograph of the student shown in the student details view">
+            <img class="profile-picture" src="{{ student.profile_picture.url }}" width="100" height="100" alt="Profile photograph of the student shown in the student details view">
         {% else %}
             No Image
         {% endif %}
@@ -60,3 +60,5 @@
     <a href="{% url 'home' %}">
         <img src="{% static 'css/image/home.jpg' %}" alt="Home">
     </a>
+</body>
+</html>

@@ -1,4 +1,5 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import get_object_or_404, render, redirect
+from django.contrib.auth.decorators import login_required
 from .models import Student
 from .forms import StudentForm
 
@@ -9,21 +10,24 @@ def home(request):
 
 
 # Add Student
+@login_required
 def student_input(request):
     if request.method == 'POST':
         form = StudentForm(request.POST, request.FILES)
         if form.is_valid():
             student = form.save()
             return redirect('student_details', studentID=student.studentID)
+        else:
+            print(form.errors)
     else:
         form = StudentForm()
 
     return render(request, 'std_input.html', {'form': form})
 
-
 # Update Student
+@login_required
 def student_update(request, studentID):
-    std = Student.objects.get(studentID=studentID)
+    std = get_object_or_404(Student, studentID=studentID)
 
     if request.method == 'POST':
         form = StudentForm(request.POST, request.FILES, instance=std)
@@ -37,21 +41,23 @@ def student_update(request, studentID):
 
 
 # Student Names List
+@login_required
 def student_names_list(request):
     students = Student.objects.all()
     return render(request, 'std_list.html', {'students': students})
 
-# student Details
+
+# Student Details
+@login_required
 def student_details(request, studentID):
-    student = Student.objects.get(studentID=studentID)
+    student = get_object_or_404(Student, studentID=studentID)
     return render(request, 'std_details.html', {'student': student})
 
 
-
-
 # Delete Student
+@login_required
 def student_delete(request, studentID):
-    student =Student.objects.get( studentID=studentID)
+    student = get_object_or_404(Student, studentID=studentID)
 
     if request.method == 'POST':
         student.delete()

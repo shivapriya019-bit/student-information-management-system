@@ -12,11 +12,11 @@ class Student(models.Model):
     studentID=models.IntegerField(primary_key=True)
     name=models.CharField(max_length=100)
     Age=models.IntegerField()
-    gender_choice= [
+    gender= [
         ('male' ,'Male'),
         ('female','Female'),
     ]
-    gender = models.CharField(max_length=10, choices=gender_choice)
+    gender = models.CharField(max_length=10, choices=gender)
     Email = models.EmailField(unique=True)
     phonenumber = models.CharField(max_length=10,validators=[phone_validator],
     unique=True)
@@ -26,5 +26,5 @@ class Student(models.Model):
     profile_picture = models.ImageField(upload_to='profile_pictures/')
     
     def __str__(self):
-        return f"{self.studentID} - {self.name} - {self.Age} - {self.Email} -{self.phonenumber} -{self.gender_choice} - {self.Address} - {self.course} - {self.DOJ} - {self.profile_picture}"
+        return f"{self.studentID} - {self.name} - {self.Age} - {self.Email} -{self.phonenumber} -{self.gender} - {self.Address} - {self.course} - {self.DOJ} - {self.profile_picture}"
      

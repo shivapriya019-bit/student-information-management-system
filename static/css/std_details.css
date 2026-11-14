@@ -29,11 +29,11 @@ td{
     text-align:center;
 
 }
-profile_pictures{
-    height:100px;
-    width:100px;
+img.profile_pictures{
+    height:40px;
+    width:40px;
     border:1px solid black;
-    border-radius:90%
+    border-radius:50%
 }
 img{
     width: 120px;

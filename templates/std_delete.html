@@ -34,14 +34,14 @@
     <form method="POST">
         {% csrf_token %}
         <button type="submit">
-            <img src="{% static 'css/image/delete.jpg' %}" alt="Delete student button to remove student records">
-        
+            <img class="icon" src="{% static 'css/image/delete.jpg' %}" alt="Delete student button to remove student records">
+        </button>
     </form>
 
     <br>
 
     <a href="{% url 'student_details' %}">
-        <img src="{%static 'css/image/cancel.jpg'%}" alt="cancel">
+        <img class="icon" src="{%static 'css/image/cancel.jpg'%}" alt="cancel">
     </a>
 
 </body>
